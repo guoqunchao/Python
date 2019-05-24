@@ -1,0 +1,3496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/creambean/article/details/88563374"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"0. SDL游戏开发 - creambean的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>0. SDL游戏开发 - creambean的博客 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-0395476d0b.min.css">
+            
+            <script type="application/ld+json">{"@context":"https:\/\/ziyuan.baidu.com\/contexts\/cambrian.jsonld","@id":"https:\/\/blog.csdn.net\/creambean\/article\/details\/88563374","appid":"1563894916825412","title":"0. SDL\u6e38\u620f\u5f00\u53d1 - creambean\u7684\u535a\u5ba2","images":["https:\/\/img-blog.csdnimg.cn\/20190314223956731.jpg?x-oss-process=image\/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NyZWFtYmVhbg==,size_16,color_FFFFFF,t_70"],"pubDate":"2019-04-03T17:41:03"}</script>
+        
+          <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-9b39979775.min.css">
+        <script type="text/javascript">
+        var username = "creambean";
+        var userPermission = false;
+        var blog_address = "https://blog.csdn.net/creambean";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var currentUserPermission = false;
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/creambean/article/details/88563374"
+        var blogUrl = "https://blog.csdn.net/";
+        //页面皮肤样式
+        var curSkin = "skin3-template";
+        // 第四范式所需数据
+        var articleTitles = "0. SDL游戏开发 - creambean的博客";
+        var articleID = "88563374";
+        
+        var nickName = "cuiyong_cn";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/creambean/phoenix/comment";
+    </script>
+    <script type="text/javascript">
+        // Traffic Stats of the entire Web site By baidu
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        // Traffic Stats of the entire Web site By baidu end
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="https://csdnimg.cn/rabbit/exposure-click/main-1.0.6.js"></script>
+    <script src="//g.csdnimg.cn/fixed-sidebar/1.1.3/fixed-sidebar.js" type="text/javascript"></script>
+    <!-- 新版上报 -->
+    <script src="//g.csdnimg.cn/track/1.2.4/track.js" type="text/javascript"></script>
+    <!-- 新版上报end -->
+            <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<!-- nodata 第三栏接口无数据时样式不变 -->
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-845","con":",,"}' data-track-click='{"mod":"kp_popu_476-845","con":",,"}'><script src="//csdnimg.cn/public/common/indexSuperise/1.0.3/indexSuperise.js?20190103190825"></script>
+<script>
+ window.csdn.indexSuperise({
+      smallMoveImg: '//img-ads.csdn.net/2019/201903281437574754.png',
+      bigMoveImg: '//img-ads.csdn.net/2019/201903281437412444.png',
+     link:'//edu.csdn.net/topic/python115?utm_source=blogpopup',
+boxStyle:140,
+trackSuperId:476,
+smallMove:'notMove',  
+trackSId:845
+    });
+</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.css">
+<script type="text/javascript">
+	// 容错处理
+	var NEWS_FEED = function(){}
+</script>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script type="text/javascript" src="//g.csdnimg.cn/copyright/1.0.3/copyright.js"></script>
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<script src="https://dup.baidustatic.com/js/ds.js"></script>
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	
+    <main>
+        <div class="blog-content-box">
+	<div class="article-header-box">
+		<div class="article-header">
+			<div class="article-title-box">
+				<span class="article-type type-1 float-left">原</span>				<h1 class="title-article">0. SDL游戏开发</h1>
+			</div>
+			<div class="article-info-box">
+				<div class="article-bar-top">
+																				<span class="time">2019年03月14日 22:49:47</span>
+					<a class="follow-nickName" href="https://me.csdn.net/creambean" target="_blank">cuiyong_cn</a>
+						<span class="read-count">阅读数：4347</span>
+						
+														<span class="tags-box artic-tag-box">
+								<span class="label">标签：</span>
+																<a data-track-click='{"mod":"popu_626","con":"SDL"}' data-track-view='{"mod":"popu_626","con":"SDL"}' class="tag-link" href="http://so.csdn.net/so/search/s.do?q=SDL&t=blog" target="_blank">SDL																<a data-track-click='{"mod":"popu_626","con":"game"}' data-track-view='{"mod":"popu_626","con":"game"}' class="tag-link" href="http://so.csdn.net/so/search/s.do?q=game&t=blog" target="_blank">game																</a>
+							</span>
+																					<div class="tags-box space">
+								<span class="label">个人分类：</span>
+																<a class="tag-link" href="https://blog.csdn.net/creambean/article/category/8758753"  target="_blank">SDL2																</a>
+							</div>
+																								</div>
+				<div class="operating">
+									</div>
+			</div>
+		</div>
+	</div>
+	<article class="baidu_pl">
+		<div id="article_content" class="article_content clearfix csdn-tracking-statistics" data-pid="blog"  data-mod=popu_307  data-dsm = "post" >
+								<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-f57960eb32.css" />
+								            <div id="content_views" class="markdown_views prism-atom-one-dark">
+							<!-- flowchart 箭头图标 勿删 -->
+							<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path></svg>
+							<p></p><div class="toc"><h3>文章目录</h3><ul><li><a href="#_1" rel="nofollow">环境准备</a></li><li><a href="#hello_world_7" rel="nofollow">还是hello world</a></li><li><a href="#_67" rel="nofollow">简单解释</a></li></ul></div><p></p>
+<h1><a id="_1"></a>环境准备</h1>
+<ol>
+<li>IDE选用codeblock带mingw(跨平台, 可定制, 轻量), 编译器gcc.</li>
+<li>SDL库编译(或下载预编译的库)</li>
+</ol>
+<p>这里不教怎么搭环境, 任何语言开发, 自己都应该学会如何搭环境. 自行搜索资料</p>
+<h1><a id="hello_world_7"></a>还是hello world</h1>
+<pre><code class="prism language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;SDL.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+SDL_Window<span class="token operator">*</span> g_pWindow <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+SDL_Renderer<span class="token operator">*</span> g_pRenderer <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">bool</span> init_success <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token comment">// initialize subsystem</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">SDL_Init</span><span class="token punctuation">(</span>SDL_INIT_EVERYTHING<span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// create window</span>
+        g_pWindow <span class="token operator">=</span> <span class="token function">SDL_CreateWindow</span><span class="token punctuation">(</span><span class="token string">"Hello world"</span><span class="token punctuation">,</span>
+                                     SDL_WINDOWPOS_CENTERED<span class="token punctuation">,</span>
+                                     SDL_WINDOWPOS_CENTERED<span class="token punctuation">,</span>
+                                     <span class="token number">640</span><span class="token punctuation">,</span> <span class="token number">480</span><span class="token punctuation">,</span>
+                                     SDL_WINDOW_SHOWN<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>g_pWindow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            g_pRenderer <span class="token operator">=</span> <span class="token function">SDL_CreateRenderer</span><span class="token punctuation">(</span>g_pWindow<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            init_success <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Fail to create render.\n"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        init_success <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Cannot initialize SDL.\n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>init_success<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">SDL_SetRenderDrawColor</span><span class="token punctuation">(</span>g_pRenderer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">SDL_RenderClear</span><span class="token punctuation">(</span>g_pRenderer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">SDL_RenderPresent</span><span class="token punctuation">(</span>g_pRenderer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">SDL_Delay</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">SDL_DestroyRenderer</span><span class="token punctuation">(</span>g_pRenderer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        g_pRenderer <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token function">SDL_DestroyWindow</span><span class="token punctuation">(</span>g_pWindow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        g_pWindow <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+        <span class="token function">SDL_Quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>新建文件, 输入如上代码.<br>
+需要注意的事, 链接库的时候, SDL2main在前, SDL2在后, 否则会报错. (这个仅限codeblock+mingw, visual studio没测试)<br>
+编译运行. 如果出现如下错误<br>
+<img src="https://img-blog.csdnimg.cn/2019031422370469.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NyZWFtYmVhbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+只需将编译的dll文件(或下载的预编译包中的)拷贝的可执行文件目录处即可(不同IDE的生成可执行文件的位置有所不同, 自行搜索)</p>
+<p>执行结果<br>
+<img src="https://img-blog.csdnimg.cn/20190314223956731.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NyZWFtYmVhbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1><a id="_67"></a>简单解释</h1>
+<p>初始化时, 我们直接用了SDL_INIT_EVERYTHING, 将所有子系统全部初始化了. 可以看文档, 正常来说应该按需初始化, 节约资源, 高效.</p>
+<p>整理流程. 初始化–&gt;创建window–&gt;创建render–&gt;显示window. 函数名也都很好理解.</p>
+
+            </div>
+						<link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-258a4616f7.css" rel="stylesheet">
+                      </div>
+	</article>
+</div>
+  <div class="hide-article-box hide-article-pos text-center">
+    <div class="border"></div>
+        <a class="btn article-footer-btn" id="btn-readmore" data-track-view='{"mod":"popu_376","con":",https://blog.csdn.net/creambean/article/details/88563374,"}' data-track-click='{"mod":"popu_376","con":",https://blog.csdn.net/creambean/article/details/88563374,"}'>阅读更多</a>
+        <a class="btn article-footer-btn article-footer-bookmark-btn" >
+      <svg class="icon no-active hover-hide" aria-hidden="true">
+        <use xlink:href="#csdnc-bookmark"></use>
+      </svg>
+      <span>收藏</span>
+    </a>
+    <div class="btn article-footer-btn  bds_weixin article-footer-share-btn" data-cmd="weixin" title="分享">
+      <svg class="icon no-active hover-hide" aria-hidden="true">
+        <use xlink:href="#csdnc-share"></use>
+      </svg>
+      <span>分享</span>
+      <div class="bdsharebuttonbox">
+        <a href="#"class="bds_weixin clear-share-style-article-footer" data-cmd="weixin" title="分享"></a>
+      </div>
+    </div>
+    
+  </div>
+  <script>
+  (function(){
+    function collection(){
+      if (currentUserName) {
+        var markObj = {};
+            markObj.imgUrl ='https://csdnimg.cn/release/phoenix/static_blog/images/appqr.png';
+        var markPrompt = (new window.csdn.publicPrompt).init(markObj);
+        var maeked = '您已经收藏过';
+        if (!$(this).hasClass("liked")) {
+          $.ajax({
+            url: 'https://my.csdn.net/my/favorite/do_add/2',
+            dataType: 'json',
+            type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
+            data: {
+              title: articleTit,
+              url: 'https://blog.csdn.net/creambean/article/details/88563374',
+              share: 1,
+              map_name: ''
+            },
+            success: function(data) {
+              
+              if (data.succ == 1) {
+                $('.btn-bookmark').addClass("liked");
+                $('.article-footer-bookmark-btn').addClass("liked").children('span').text('已收藏');
+                markPrompt.show({})
+                // alert('收藏成功,可以在个人中心查看我的收藏');
+              } else {
+                if (data.msg === "您已经收藏过") {
+                  $('.btn-bookmark').addClass("liked");
+                  $('.article-footer-bookmark-btn').addClass("liked").children('span').text('已收藏');
+                  markPrompt.show({
+                    titleStr: maeked
+                  })
+                }else{
+                  alert(data.msg);
+                  
+                }
+              }
+            }
+          });
+        } else {
+          markPrompt.show({
+            titleStr: maeked
+          })
+        }
+      } else {
+        window.csdn.loginBox.show();
+      }
+    }
+    function permissionCheck(dom){
+      var returnData = false;
+      switch (true) {
+        case currentUserPermission && userPermission:
+          clearReadMoreBtn(dom)
+          returnData = true;
+          break;
+        case userPermission:
+          dom.text('VIP阅读');
+          returnData = false;
+          break;
+        default:
+          
+      }
+      return returnData;
+    }
+    window.csdn = window.csdn ? window.csdn : {};
+    window.csdn.articleCollection = collection;
+    function clearReadMoreBtn(dom) {
+      if(userPermission && !(dom instanceof jQuery)) {
+        window.open('https://mall.csdn.net/vip_code?utm_source=brv')
+        return false;
+      }
+      dom = dom instanceof jQuery ? dom : $(this);
+      $("div.article_content").removeAttr("style");
+      dom.parent().remove();
+    }
+    function setArticleH(btnReadmore,posi){
+      var winH = $(window).height();
+      var articleBox = $("div.article_content");
+      var artH = articleBox.height();
+      if(artH > winH*posi){
+        articleBox.css({
+          'height':winH*posi+'px',
+          'overflow':'hidden'
+        })
+        btnReadmore.click(clearReadMoreBtn)
+      }else{
+        btnReadmore.parent().remove()
+      }
+    }
+    var btnReadmore = $("#btn-readmore");
+    $('.article-footer-bookmark-btn').click(window.csdn.articleCollection)
+    if(btnReadmore.length>0){
+      if (permissionCheck(btnReadmore)) {
+        return false;
+      }
+      if(currentUserName){
+        setArticleH(btnReadmore,3);
+      }else{
+        setArticleH(btnReadmore,1.2);
+      }
+    }else{
+      $('.hide-article-box').addClass('hide-article-style');
+    }
+  })()
+</script>
+<script>
+		$(".MathJax").remove();
+		if($('div.markdown_views pre.prettyprint code.hljs').length > 0 ){
+				$('div.markdown_views')[0].className = 'markdown_views';
+		}
+</script>
+        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-402","con":",,"}' data-track-click='{"mod":"kp_popu_58-402","con":",,"}'><div style="width:100%;background:#fff;border:3px solid #fff;">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div id="three_ad1" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 100,
+                showid : 'ztvJV8',
+                placeholderId: "three_ad1",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 0,
+                    imageWidth: 90,
+                    imageHeight: 68,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft YaHei',
+                    paddingTop : 20,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 20,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="88563374">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-mod="popu_384"><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<button class="btn btn-sm btn-link-blue" id="btnMoreComment"></button>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+            		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bull521/article/details/84694705,BlogCommendFromThirdService_0"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bull521/article/details/84694705" target="_blank" title="SDL农场游戏开发 2.地图与土壤层">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>农场<em>游戏开发</em> 2.地图与土壤层				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-02</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1431</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bull521/article/details/84694705" target="_blank" title="SDL农场游戏开发 2.地图与土壤层">
+							<span class="desc oneline">本游戏的地图使用的是tiled这个软件导出的*.tmx(xml格式)，地图类型是45度方向，以前曾经研究过45度与90度地图的区别，最后发现区别不是很大，主要在于图块的不同，90度地图的图块一般是矩形...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/bull521">来自：	<span class="blog_title"> bull521的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u014299153/article/details/69400558,BlogCommendFromThirdService_1"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u014299153/article/details/69400558" target="_blank" title="SDL 2 游戏编程（一）第一个图形界面">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em> 2 游戏编程（一）第一个图形界面				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-06</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1736</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u014299153/article/details/69400558" target="_blank" title="SDL 2 游戏编程（一）第一个图形界面">
+							<span class="desc oneline">原文链接HelloSDL:YourFirstGraphicsWindow//UsingSDLandstandardIO#include#include//Screendimensionconstant...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u014299153">来自：	<span class="blog_title"> 起名字什么的最烦了</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qinyuanpei/article/details/47079397,BlogCommendFromThirdService_2"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qinyuanpei/article/details/47079397" target="_blank" title="SDL游戏开发系列第二话：基本图形的绘制">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em><em>游戏开发</em>系列第二话：基本图形的绘制				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-27</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5934</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qinyuanpei/article/details/47079397" target="_blank" title="SDL游戏开发系列第二话：基本图形的绘制">
+							<span class="desc oneline">各位朋友，大家好，我是秦元培，欢迎大家关注我的博客，我的博客地址是：http://qinyuanpei.com。话题紧接上回，在上回我们讲到了SDL的下载、安装和配置并对SDL游戏有了初步的了解。我们...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qinyuanpei">来自：	<span class="blog_title"> 七喜先生の猫</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}'><script type="text/javascript" src="//rabc1.iteye.com/production/res/rxjg.js?pkcgstj=jm"></script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/diandianxiyu/article/details/53068012,BlogCommendESEnWordWeight_3"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
+				<h4 class="text-truncate oneline">
+						【小程序】微信小程序开发实践				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-07</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							25万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
+							<span class="desc oneline">帐号相关流程注册范围企业政府媒体其他组织换句话讲就是不让个人开发者注册。:)填写企业信息不能使用和之前的公众号账户相同的邮箱,也就是说小程序是和微信公众号一个层级的。填写公司机构信息,对公账户信息绑定...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/diandianxiyu">来自：	<span class="blog_title"> 小雨同学的技术博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qinyuanpei/article/details/47055751,BlogCommendFromQuerySearch_4"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qinyuanpei/article/details/47055751" target="_blank" title="SDL游戏开发系列第一话：Hello SDL">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em><em>游戏开发</em>系列第一话：Hello <em>SDL</em>				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-25</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							6102</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qinyuanpei/article/details/47055751" target="_blank" title="SDL游戏开发系列第一话：Hello SDL">
+							<span class="desc oneline">各位读者朋友大家好，我是秦元培，欢迎大家关注我的博客，我的博客地址是http://qinyuanpei.com。从今天起博主将带领大家一起走进SDL游戏开发的世界，如果说此前的Unity3D游戏开发系...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qinyuanpei">来自：	<span class="blog_title"> 七喜先生の猫</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/rx0uc/article/details/83413522,BlogCommendFromQuerySearch_5"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/rx0uc/article/details/83413522" target="_blank" title="C语言游戏开发SDL篇">
+				<h4 class="text-truncate oneline">
+						C语言<em>游戏开发</em><em>SDL</em>篇				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-26</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							237</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/rx0uc/article/details/83413522" target="_blank" title="C语言游戏开发SDL篇">
+							<span class="desc oneline">在CSDN博客发现一些分享的好文章，但暂时不懂如何收藏，先写文章将这些网址收录，目后随时方便自己翻阅2018年10月26日   ====================================...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/rx0uc">来自：	<span class="blog_title"> rx0uc的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/kof98765/article/details/15029645,BlogCommendFromQuerySearch_6"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/kof98765/article/details/15029645" target="_blank" title="SDL游戏开发教程10（场景管理器）">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em><em>游戏开发</em>教程10（场景管理器）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-10</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1484</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/kof98765/article/details/15029645" target="_blank" title="SDL游戏开发教程10（场景管理器）">
+							<span class="desc oneline">本节将模仿ogre的ScreenManager编写一个SDL的ScreenManager。效果图如下   这是利用场景管理器创建的一个扫雷游戏界面，为后面的扫雷游戏做准备。    这里的场景管理器主要...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/kof98765">来自：	<span class="blog_title"> kof98765的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/mpsk07/article/details/52106692,BlogCommendFromQuerySearch_7"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/mpsk07/article/details/52106692" target="_blank" title="基于SDL的game开发日志">
+				<h4 class="text-truncate oneline">
+						基于<em>SDL</em>的game开发日志				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-03</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							380</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/mpsk07/article/details/52106692" target="_blank" title="基于SDL的game开发日志">
+							<span class="desc oneline">下一个版本：0.0.3.0button对象的实现消息队列2016-08-03版本号：0.0.2.3完成debug，程序正常运行，使用封装后的对象完成版本0.0.2.0中的功能2016-08-02版本号...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/mpsk07">来自：	<span class="blog_title"> mpsk的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/yuanlinhyhy/article/details/60870610,BlogCommendFromQuerySearch_8"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/yuanlinhyhy/article/details/60870610" target="_blank" title="软件渲染第一步，利用SDL搭建软件渲染">
+				<h4 class="text-truncate oneline">
+						软件渲染第一步，利用<em>SDL</em>搭建软件渲染				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">03-08</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							629</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/yuanlinhyhy/article/details/60870610" target="_blank" title="软件渲染第一步，利用SDL搭建软件渲染">
+							<span class="desc oneline">偶然间突然对计算机图形学有了兴趣，最后找到了《3D游戏编程大师》，试着照着书上所写的一步步实现软件渲染算法但是这本书的年代比较久远了，使用的是早已经淘汰了的DirectDraw，于是软件渲染算法的学习...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/yuanlinhyhy">来自：	<span class="blog_title"> yuanlinhyhy的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bull521/article/details/84817109,BlogCommendFromQuerySearch_9"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bull521/article/details/84817109" target="_blank" title="SDL农场游戏开发 11.总结">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>农场<em>游戏开发</em> 11.总结				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-03</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							183</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bull521/article/details/84817109" target="_blank" title="SDL农场游戏开发 11.总结">
+							<span class="desc oneline">1.总结到目前为止，整个游戏的开发已经完成了，整个开发过程跨时比较长，实现的基本上是比较完整的游戏了，当然了，单纯的农场类游戏目前可能有些无趣，所以下面我提供一个思路，以便于将不同游戏结合起来。2.把...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/bull521">来自：	<span class="blog_title"> bull521的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+          <div class="recommend-item-box blog-expert-recommend-box">
+				<div class="d-flex">
+					<div class="blog-expert-recommend">
+						<div class="blog-expert">
+							<div class="blog-expert-flexbox"></div>
+						</div>
+					</div>
+				</div>
+      </div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bull521/article/details/84892768,BlogCommendFromQuerySearch_10"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bull521/article/details/84892768" target="_blank" title="SDL农场游戏开发 6.作物的收获和铲除">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>农场<em>游戏开发</em> 6.作物的收获和铲除				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-08</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							100</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bull521/article/details/84892768" target="_blank" title="SDL农场游戏开发 6.作物的收获和铲除">
+							<span class="desc oneline">FarmUILayer主要用于显示，它的功能大致如下：商店、背包按钮。	作物的收获、铲除按钮。	作物的具体信息，如多少小时后成熟。	农场信息，如金币数目、等级和经验。其界面大致如下：商店按钮、仓库按钮...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/bull521">来自：	<span class="blog_title"> bull521的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/finewind/article/details/38514097,BlogCommendFromQuerySearch_11"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/finewind/article/details/38514097" target="_blank" title="SDL2.0学习笔记2---基于SDL的基本游戏架构">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>2.0学习笔记2---基于<em>SDL</em>的基本游戏架构				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-12</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3393</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/finewind/article/details/38514097" target="_blank" title="SDL2.0学习笔记2---基于SDL的基本游戏架构">
+							<span class="desc oneline">#include&quot;SDL.h&quot;/******************************************************************************gamest...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/finewind">来自：	<span class="blog_title"> finewind的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/landengluo/article/details/24430737,BlogCommendFromQuerySearch_12"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/landengluo/article/details/24430737" target="_blank" title="SFML 2.1 开发之旅 1">
+				<h4 class="text-truncate oneline">
+						SFML 2.1 开发之旅 1				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-24</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5313</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/landengluo/article/details/24430737" target="_blank" title="SFML 2.1 开发之旅 1">
+							<span class="desc oneline">最近开始学用SFML了，觉得SFML是个挺好的东西，尤其是对于游戏开发</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/landengluo">来自：	<span class="blog_title"> landengluo的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq573011406/article/details/8100039,BlogCommendFromQuerySearch_13"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq573011406/article/details/8100039" target="_blank" title="2D游戏引擎Allegro 系列教程（一） 配置allegro开发环境">
+				<h4 class="text-truncate oneline">
+						2D游戏引擎Allegro 系列教程（一） 配置allegro开发环境				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4418</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq573011406/article/details/8100039" target="_blank" title="2D游戏引擎Allegro 系列教程（一） 配置allegro开发环境">
+							<span class="desc oneline">本系列文章由sky编写，转载请注明出处。 http://blog.csdn.net/qq573011406/article/details/8100039作者：袁全伟 邮箱：qq573011406@1...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq573011406">来自：	<span class="blog_title"> sky的游戏开发博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/qq_27725389/9694968,BlogCommendFromQuerySearch_14"}'>
+			<a href="https://download.csdn.net/download/qq_27725389/9694968" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>sdl</em><em>游戏开发</em>						</h4>
+						<span class="data float-right">11-27</span>
+					</div>
+					<div class="desc oneline">
+							SDL Game Development.pdf 是指定学习SDL开发游戏入门的教程					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bull521/article/details/79679587,BlogCommendFromQuerySearch_15"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bull521/article/details/79679587" target="_blank" title="SDL_Engine游戏引擎制作 0-目录">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>_Engine游戏引擎制作 0-目录				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">03-24</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							494</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bull521/article/details/79679587" target="_blank" title="SDL_Engine游戏引擎制作 0-目录">
+							<span class="desc oneline">本系列文章旨在介绍并开发一个基于SDL(SimpleDirectMediaLayer)的模仿Cococs2d-x的一个游戏引擎。目前我已经使用这个开发了好几个游戏，从飞机大战，到捕鱼达人，再到植物大战...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/bull521">来自：	<span class="blog_title"> bull521的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bull521/article/details/84638511,BlogCommendFromQuerySearch_16"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bull521/article/details/84638511" target="_blank" title="SDL农场游戏开发 1.环境搭建">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>农场<em>游戏开发</em> 1.环境搭建				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-01</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4449</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bull521/article/details/84638511" target="_blank" title="SDL农场游戏开发 1.环境搭建">
+							<span class="desc oneline">由于我个人受到传统农场类游戏的熏陶，因此萌生出了开发一个类似于QQ农场的游戏。本次游戏打着SDL的幌子（这么说自己真的好么），其实使用的是SDL_Engine，它是我闲暇时模仿cocos2dx而写的一...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/bull521">来自：	<span class="blog_title"> bull521的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/zhaolu8301/3193723,BlogCommendFromQuerySearch_17"}'>
+			<a href="https://download.csdn.net/download/zhaolu8301/3193723" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>SDL</em>学习资料  <em>SDL</em> <em>游戏开发</em>linux下视频播放器开发						</h4>
+						<span class="data float-right">04-15</span>
+					</div>
+					<div class="desc oneline">
+							该资料是从网上搜集的SDL详细资料的总结，适于SDL的游戏开发、linux下的视频播放器开发、嵌入式产品GUI界面的开发！该资料是从网上搜集的SDL详细资料的总结，适于SDL的游戏开发、linux下的视频播放器开发、嵌入式产品GUI界面的...					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-556","con":",,"}' data-track-click='{"mod":"kp_popu_62-556","con":",,"}'><div id="three_ad18" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad18",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/ttod/8244651,BlogCommendFromQuerySearch_18"}'>
+			<a href="https://download.csdn.net/download/ttod/8244651" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>SDL</em><em>游戏开发</em>经典教程01源代码						</h4>
+						<span class="data float-right">12-10</span>
+					</div>
+					<div class="desc oneline">
+							SDL游戏开发经典教程01源代码，来自：http://lazyfoo.net/tutorials/SDL/index.php					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/Prostory/3173147,BlogCommendFromQuerySearch_19"}'>
+			<a href="https://download.csdn.net/download/Prostory/3173147" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>sdl</em><em>游戏开发</em>中文文档						</h4>
+						<span class="data float-right">04-08</span>
+					</div>
+					<div class="desc oneline">
+							sdl（Simple DirectMedia Layer）简易直控媒体层，详细介绍了SDL游戏开发。					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/ysleepers/3792031,BlogCommendFromQuerySearch_20"}'>
+			<a href="https://download.csdn.net/download/ysleepers/3792031" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							一个<em>SDL</em>游戏的基本示例						</h4>
+						<span class="data float-right">11-14</span>
+					</div>
+					<div class="desc oneline">
+							一个SDL游戏的基本示例。学习如何利用SDL进行游戏开发。					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/ttod/8244659,BlogCommendFromQuerySearch_21"}'>
+			<a href="https://download.csdn.net/download/ttod/8244659" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>SDL</em><em>游戏开发</em>经典教程03源代码						</h4>
+						<span class="data float-right">12-10</span>
+					</div>
+					<div class="desc oneline">
+							SDL游戏开发经典教程03源代码，来自http://lazyfoo.net/tutorials/SDL/index.php					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/ycg01/article/details/18371215,BlogCommendFromQuerySearch_22"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/ycg01/article/details/18371215" target="_blank" title="SDL游戏之路(十一)--按钮制作">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>游戏之路(十一)--按钮制作				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3012</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/ycg01/article/details/18371215" target="_blank" title="SDL游戏之路(十一)--按钮制作">
+							<span class="desc oneline">﻿﻿按钮制作按钮我们定义三种状态，1.按钮区域外，2.按钮区域内，3.按钮被点下对三种状态可以分别显示不同的图片。#ifndefSKBUTTON_H_#defineSKBUTTON_H_#includ...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/ycg01">来自：	<span class="blog_title"> ycg01的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-555","con":",,"}' data-track-click='{"mod":"kp_popu_63-555","con":",,"}'><div id="three_ad23" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad23",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/gongxp123456/article/details/62418752,BlogCommendFromQuerySearch_23"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/gongxp123456/article/details/62418752" target="_blank" title="Android Studio 开发SDL2.0最佳实践 - 可以直接编译和调试了，酸爽！">
+				<h4 class="text-truncate oneline">
+						Android Studio 开发<em>SDL</em>2.0最佳实践 - 可以直接编译和调试了，酸爽！				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">03-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4049</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/gongxp123456/article/details/62418752" target="_blank" title="Android Studio 开发SDL2.0最佳实践 - 可以直接编译和调试了，酸爽！">
+							<span class="desc oneline">本文2017-3-14　　传统的使用NDK按照命令行来编译SDL2以及自己的C文件，再导入到AndroidStudio工程编译成为APK，这样十分麻烦，没有代码提示，做个HelloWorld还可以，真...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/gongxp123456">来自：	<span class="blog_title"> gongxp123456的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/i71577802/3424720,BlogCommendFromQuerySearch_24"}'>
+			<a href="https://download.csdn.net/download/i71577802/3424720" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							嵌入式 <em>SDL</em>实现的４个动画						</h4>
+						<span class="data float-right">07-07</span>
+					</div>
+					<div class="desc oneline">
+							SDL实现的4个动画，SDL真是个好东西，是游戏开发必不可少的，做出的动画效果让人很感兴趣，对SDL也很感兴趣					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u014299153/article/details/69267077,BlogCommendFromQuerySearch_25"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u014299153/article/details/69267077" target="_blank" title="SDL 2 游戏编程（零）配置环境">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em> 2 游戏编程（零）配置环境				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-05</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1910</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u014299153/article/details/69267077" target="_blank" title="SDL 2 游戏编程（零）配置环境">
+							<span class="desc oneline">原文链接LazyFoo’Productions(2004-2015)因为我用的codeblock，所以这里只放下codeblock的环境配置方法供参考~从官网下载SDL2，codeblock默认使用的...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u014299153">来自：	<span class="blog_title"> 起名字什么的最烦了</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/swordplayer/1848561,BlogCommendFromQuerySearch_26"}'>
+			<a href="https://download.csdn.net/download/swordplayer/1848561" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>SDL</em> <em>游戏开发</em> 经典教程						</h4>
+						<span class="data float-right">11-26</span>
+					</div>
+					<div class="desc oneline">
+							SDL方面的经典教程，并提供有例子以供练习。					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bull521/article/details/86747376,BlogCommendFromQuerySearch_27"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bull521/article/details/86747376" target="_blank" title="SDL游戏开发01-SDL的简介">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em><em>游戏开发</em>01-<em>SDL</em>的简介				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-02</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							9478</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bull521/article/details/86747376" target="_blank" title="SDL游戏开发01-SDL的简介">
+							<span class="desc oneline">本教程为一个长系列，旨在于从零开始边学习SDL边开发游戏。一.什么是SDL？SDL(SimpleDirectMediaLayer)是一套开放源代码的跨平台多媒体开发库，使用C语言写成。SDL提供了数种...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/bull521">来自：	<span class="blog_title"> bull521的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-81","con":",,"}' data-track-click='{"mod":"kp_popu_64-81","con":",,"}'><div id="three_ad28" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad28",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/cyf15238622067/article/details/82905897,BlogCommendFromQuerySearch_28"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/cyf15238622067/article/details/82905897" target="_blank" title="SDL2系列教程2-初始化&amp;窗口">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>2系列教程2-初始化&amp;窗口				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-30</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							299</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/cyf15238622067/article/details/82905897" target="_blank" title="SDL2系列教程2-初始化&amp;窗口">
+							<span class="desc oneline">介绍本节介绍如何使用SDL2（SimpleDirectMedia2）库。它是一个（相对）易于使用的库，可以在不依赖于特定于操作的功能的情况下添加多媒体功能。SDL提供的内容：窗口管理	软件（CPU）和...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/cyf15238622067">来自：	<span class="blog_title"> cyf15238622067的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/a332324956/article/details/78507091,BlogCommendFromQuerySearch_29"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/a332324956/article/details/78507091" target="_blank" title="android 游戏移植 （一） (文末有福利) | SDL 西游释厄传调试">
+				<h4 class="text-truncate oneline">
+						android 游戏移植 （一） (文末有福利) | <em>SDL</em> 西游释厄传调试				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1143</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/a332324956/article/details/78507091" target="_blank" title="android 游戏移植 （一） (文末有福利) | SDL 西游释厄传调试">
+							<span class="desc oneline">游戏效果（不是真实画质）有没有被惊艳到？你的内心肯定会说，我靠，画质这么渣，画面却如此熟悉。对的，就是如此渣渣的画面，却伴随了我们的童年快乐。下面我们就详细的讲讲这个移植过程，说得更加具体些，就是本身...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/a332324956">来自：	<span class="blog_title"> 代码GG陆晓明</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/jalleryan/8458615,BlogCommendFromQuerySearch_30"}'>
+			<a href="https://download.csdn.net/download/jalleryan/8458615" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>SDL</em> Game Development book source code						</h4>
+						<span class="data float-right">02-26</span>
+					</div>
+					<div class="desc oneline">
+							介绍使用SDL2进行游戏开发的书SDL Game Development  中配套的源代码。					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/cuihaitao/606670,BlogCommendFromQuerySearch_31"}'>
+			<a href="https://download.csdn.net/download/cuihaitao/606670" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							奥运贪吃蛇游戏源代码						</h4>
+						<span class="data float-right">09-05</span>
+					</div>
+					<div class="desc oneline">
+							开发环境是dev c++ +  sdl
+游戏开发的入门级产品，适于初学者研究					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/yi79x1z/article/details/41147139,BlogCommendFromQuerySearch_32"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/yi79x1z/article/details/41147139" target="_blank" title="打算开始写一个2.5D游戏引擎">
+				<h4 class="text-truncate oneline">
+						打算开始写一个2.5D游戏引擎				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-15</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1438</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/yi79x1z/article/details/41147139" target="_blank" title="打算开始写一个2.5D游戏引擎">
+							<span class="desc oneline">1、为什么有那么多游戏引擎还要自己写一个游戏引擎？   我本身并不是学图形学的，只是一个有三年游戏开发经验的客户端程序员。我的工作经历告诉我，如果不自己写一个游戏引擎（即便最终不能有实际应用）那么就不...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/yi79x1z">来自：	<span class="blog_title"> yi79x1z的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-84","con":",,"}' data-track-click='{"mod":"kp_popu_65-84","con":",,"}'><div id="three_ad33" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bull521/article/details/86761252,BlogCommendFromQuerySearch_33"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bull521/article/details/86761252" target="_blank" title="SDL游戏开发02-配置开发环境">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em><em>游戏开发</em>02-配置开发环境				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-03</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							8877</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bull521/article/details/86761252" target="_blank" title="SDL游戏开发02-配置开发环境">
+							<span class="desc oneline">一般情况下，在任何一个计算机语言中要使用第三方功能时，都需要配置环境，SDL同样如此。在我一开始学习的时候对环境配置是深恶痛绝的，稍微出错都会影响学习积极性。但不得不承认，环境的配置一般都是第一件要做...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/bull521">来自：	<span class="blog_title"> bull521的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bull521/article/details/84777877,BlogCommendFromQuerySearch_34"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bull521/article/details/84777877" target="_blank" title="SDL农场游戏开发 3.StaticData类">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>农场<em>游戏开发</em> 3.StaticData类				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-03</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4816</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bull521/article/details/84777877" target="_blank" title="SDL农场游戏开发 3.StaticData类">
+							<span class="desc oneline">前面说过，StaticData类负责管理程序在运行过程中不会发生变化的数据，如下为Resources目录结构:data文件夹保存着一些静态数据，比如crops.csv文件保存着作物信息，soils.c...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/bull521">来自：	<span class="blog_title"> bull521的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/pdw_jsp/article/details/78851916,BlogCommendFromQuerySearch_35"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/pdw_jsp/article/details/78851916" target="_blank" title="独立游戏开发之路">
+				<h4 class="text-truncate oneline">
+						独立<em>游戏开发</em>之路				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-20</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							7204</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/pdw_jsp/article/details/78851916" target="_blank" title="独立游戏开发之路">
+							<span class="desc oneline">人到了一定年纪就想遵循自己内行的真实感受，不关乎家庭，不关乎事业独立游戏之初我来深圳也有6年了，前前后后也经历了好多东西，引擎的更迭从之前的cocos到现在的unity，虚幻。游戏也从简单的跑酷，塔防...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/pdw_jsp">来自：	<span class="blog_title"> pdw_jsp的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/yulincat/9544790,BlogCommendFromQuerySearch_36"}'>
+			<a href="https://download.csdn.net/download/yulincat/9544790" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>SDL</em>系列教程						</h4>
+						<span class="data float-right">06-08</span>
+					</div>
+					<div class="desc oneline">
+							SDL 1.2的系列教程，共15章，教程后附有每个章节的原发布地址。通过本教程，可以系统地了解SDL 1.2的架构和应用，对想采用SDL进行游戏开发的有很大帮助。					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_33747722/article/details/53364097,BlogCommendFromQuerySearch_37"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq_33747722/article/details/53364097" target="_blank" title="Unity5.x制作合金弹头(五)-子弹与炸弹的创建">
+				<h4 class="text-truncate oneline">
+						Unity5.x制作合金弹头(五)-子弹与炸弹的创建				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-27</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1240</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq_33747722/article/details/53364097" target="_blank" title="Unity5.x制作合金弹头(五)-子弹与炸弹的创建">
+							<span class="desc oneline">本节分子弹与炸弹的攻击方向、消失动画、触发碰撞体来阐述一.攻击方向在实例化弹药时，先判断弹药投放的方向，由主角的面朝方向来决定Grenade.csStart函数：由主角的面朝方向来确定弹药的投放速度o...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq_33747722">来自：	<span class="blog_title"> Jiboo的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-881","con":",,"}' data-track-click='{"mod":"kp_popu_66-881","con":",,"}'><script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T38_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T38  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T38_render", "T38");
+</script></div></div>
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/bjflxst/1953211,BlogCommendFromQuerySearch_38"}'>
+			<a href="https://download.csdn.net/download/bjflxst/1953211" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>SDL</em>2010 一组图形控件						</h4>
+						<span class="data float-right">01-01</span>
+					</div>
+					<div class="desc oneline">
+							SDL for 2010
+SDL for 2010
+SDL for 2010
+SDL for 2010
+SDL for 2010
+SDL for 2010					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/boonya/article/details/79218669,BlogCommendFromQuerySearch_39"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/boonya/article/details/79218669" target="_blank" title="SDL 音频示例-打开音频设备播放和混流">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em> 音频示例-打开音频设备播放和混流				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-31</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							968</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/boonya/article/details/79218669" target="_blank" title="SDL 音频示例-打开音频设备播放和混流">
+							<span class="desc oneline">SDL，即简单的DirectMediaLayer是一个跨平台开发库，旨在通过OpenGL和Direct3D提供对音频，键盘，鼠标，游戏杆和图形硬件的低级访问。它被视频播放软件，模拟器和流行游戏使用，包...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/boonya">来自：	<span class="blog_title"> 纸上得来终觉浅，绝知此事要躬行</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qp120291570/article/details/8246986,BlogCommendFromQuerySearch_40"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qp120291570/article/details/8246986" target="_blank" title="SDL入门学习续-在SDL中使用OpenGL">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>入门学习续-在<em>SDL</em>中使用OpenGL				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-01</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3034</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qp120291570/article/details/8246986" target="_blank" title="SDL入门学习续-在SDL中使用OpenGL">
+							<span class="desc oneline">配置好SDL之后，就想在SDL中使用openGL，原以为会像在GLFW中那样简单的，实际上确花费了一整个下午不断查看文档，实例才搞定问题。总结如下：1）SDL对OpenGL进行了部分的封装，一些Ope...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qp120291570">来自：	<span class="blog_title"> 爱冒险的技术宅</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/mandagod/article/details/52004260,BlogCommendFromQuerySearch_41"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/mandagod/article/details/52004260" target="_blank" title="SDL编程初步">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>编程初步				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-23</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1848</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/mandagod/article/details/52004260" target="_blank" title="SDL编程初步">
+							<span class="desc oneline">SDL简介•作用▫SDL(SimpleDirectMediaLayer)库的作用说白了就是封装了复杂的视音频底层交互工作，简化了视音频处理的难度。•特点▫跨平台▫开源SDL结构如下所示。可以看出它实际...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/mandagod">来自：	<span class="blog_title"> mandagod的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/a332324956/article/details/78218871,BlogCommendFromQuerySearch_42"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/a332324956/article/details/78218871" target="_blank" title="SDL系列讲解（一） 简介">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>系列讲解（一） 简介				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-12</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1437</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/a332324956/article/details/78218871" target="_blank" title="SDL系列讲解（一） 简介">
+							<span class="desc oneline">什么是SDLSimpleDirectMediaLayer(SDL)是一个跨平台开发库,主要提供对音频，键盘，鼠标，操纵杆的操作,通过OpenGL和Direct3D来实现直接访问图像硬件。主要应用在视频...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/a332324956">来自：	<span class="blog_title"> 代码GG陆晓明</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-882","con":",,"}' data-track-click='{"mod":"kp_popu_67-882","con":",,"}'><script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T43_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T43  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T43_render", "T43");
+</script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/DaveBobo/article/details/51123900,BlogCommendFromQuerySearch_43"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/DaveBobo/article/details/51123900" target="_blank" title="VS2013下SDL开发环境搭建">
+				<h4 class="text-truncate oneline">
+						VS2013下<em>SDL</em>开发环境搭建				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4415</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/DaveBobo/article/details/51123900" target="_blank" title="VS2013下SDL开发环境搭建">
+							<span class="desc oneline">其实如果环境配置多了，我们会发现很多vc的环境配置都大同小异。先下载源文件，可以去官网下载也可以直接CSDN下载：http://download.csdn.net/detail/long636688/...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/DaveBobo">来自：	<span class="blog_title"> DaveBobo的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/kof98765/article/details/16115425,BlogCommendFromQuerySearch_44"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/kof98765/article/details/16115425" target="_blank" title="SDL学习——画图、点阵显示">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>学习——画图、点阵显示				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-14</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2848</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/kof98765/article/details/16115425" target="_blank" title="SDL学习——画图、点阵显示">
+							<span class="desc oneline">很久以前，发表了几篇SDL在Windows编译的文章，同时也参考网上的一个十分简单的例子写了测试的程序，本文章将以此为基础并添加自己的代码。回首第1篇关于SDL的文章，那已是去年12月份写的了，时间过...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/kof98765">来自：	<span class="blog_title"> kof98765的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/a332324956/article/details/78218894,BlogCommendFromQuerySearch_45"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/a332324956/article/details/78218894" target="_blank" title="SDL是什么，能干什么，为什么我们要学习它？">
+				<h4 class="text-truncate oneline">
+						<em>SDL</em>是什么，能干什么，为什么我们要学习它？				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-12</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							8684</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/a332324956/article/details/78218894" target="_blank" title="SDL是什么，能干什么，为什么我们要学习它？">
+							<span class="desc oneline">关于SDL,在简介里面，有一些概念，但是很多人还是留言，不清楚到底是个什么。这节，我简单总结下:我们如何将一张图显示在屏幕上。这里简单的分为几个部分，硬件屏幕，驱动程序，软件部分。SDL不直接关注硬件...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/a332324956">来自：	<span class="blog_title"> 代码GG陆晓明</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/skyremember/article/details/3172788,BlogCommendFromQuerySearch_46"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/skyremember/article/details/3172788" target="_blank" title="用C++实现跨平台游戏引擎开发">
+				<h4 class="text-truncate oneline">
+						用C++实现跨平台游戏引擎开发				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-29</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/skyremember/article/details/3172788" target="_blank" title="用C++实现跨平台游戏引擎开发">
+							<span class="desc oneline">游戏开发系列							用C++实现跨平台游戏引擎开发								　　你是否梦想写一部格斗游戏但却无从着手呢？是否你只因游戏开发好玩而对之感兴趣？本文我们将分析一个通用的跨平台游戏引擎，每个游戏...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/skyremember">来自：	<span class="blog_title"> skyremember的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Qyee16/article/details/51459523,BlogCommendFromQuerySearch_47"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Qyee16/article/details/51459523" target="_blank" title="【SDL】---窗口显示">
+				<h4 class="text-truncate oneline">
+						【<em>SDL</em>】---窗口显示				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-20</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1357</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Qyee16/article/details/51459523" target="_blank" title="【SDL】---窗口显示">
+							<span class="desc oneline">学习SDL，看官方的例子很多，网上其他的人例子总有一点残缺，学习成本较高，比如显示窗口就单纯的显示窗口，如果你把消息循环也放进去，理解起来程序并不复杂，而且瞬间就提高了一个档次。#include&quot;SD...</span>
+						</a>
+						  <span class="blog_title_box oneline no-title">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-883","con":",,"}' data-track-click='{"mod":"kp_popu_68-883","con":",,"}'><!-- T48 位置 -->
+<script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T48_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T48  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T48_render", "T48");
+</script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/huangkelong/article/details/2020365,BlogCommendFromQuerySearch_48"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/huangkelong/article/details/2020365" target="_blank" title=" 软件安全开发周期 - ＳＤＬ">
+				<h4 class="text-truncate oneline">
+						 软件安全开发周期 - ＳＤＬ				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-03</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1695</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/huangkelong/article/details/2020365" target="_blank" title=" 软件安全开发周期 - ＳＤＬ">
+							<span class="desc oneline"> 申明。文章仅代表个人观点，与所在公司无任何联系。 1.    概述安全开发周期，即SecurityDevelopmentLifecycle(SDL)，是微软提出的从安全角度指导软件开发过程的管理模式...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/huangkelong">来自：	<span class="blog_title"> 软件开发资料汇总</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/xinyi0622/article/details/73882559,BlogCommendFromQuerySearch_49"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/xinyi0622/article/details/73882559" target="_blank" title="安全开发流程（SDL）">
+				<h4 class="text-truncate oneline">
+						安全开发流程（<em>SDL</em>）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-29</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/xinyi0622/article/details/73882559" target="_blank" title="安全开发流程（SDL）">
+							<span class="desc oneline">一、SDL简介SDLsecuritydevelopmentlifecycle（安全开发生命周期），是微软提出的从安全角度指导软件开发过程的管理模式。SDL是一个安全保证的过程，起重点是软件开发，它在开...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/xinyi0622">来自：	<span class="blog_title"> xinyi0622的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/stpeace/article/details/24815417,BlogCommendHotData_0"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/stpeace/article/details/24815417" target="_blank" title="如何用adb连接android手机?（我的亲自经历）------ 顺便说说unable to connect to 192.168.1.100:5555的原因和解决方法">
+				<h4 class="text-truncate oneline">
+						如何用adb连接android手机?（我的亲自经历）------ 顺便说说unable to connect to 192.168.1.100:5555的原因和解决方法				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-30</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							16万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/stpeace/article/details/24815417" target="_blank" title="如何用adb连接android手机?（我的亲自经历）------ 顺便说说unable to connect to 192.168.1.100:5555的原因和解决方法">
+							<span class="desc oneline">adb是什么呢？ 我就不多说了， 对于搞android开发的人来说， 一定不陌生。 本文讲述如何用adb来连接手机。...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/stpeace">来自：	<span class="blog_title"> stpeace的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/on2way/article/details/46851451,BlogCommendHotData_1"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/on2way/article/details/46851451" target="_blank" title="Python下opencv使用笔记（七）（图像梯度与边缘检测）">
+				<h4 class="text-truncate oneline">
+						Python下opencv使用笔记（七）（图像梯度与边缘检测）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-12</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/on2way/article/details/46851451" target="_blank" title="Python下opencv使用笔记（七）（图像梯度与边缘检测）">
+							<span class="desc oneline">梯度简单来说就是求导，在图像上表现出来的就是提取图像的边缘（不管是横向的、纵向的、斜方向的等等），所需要的无非也是一个核模板，模板的不同结果也不同。所以可以看到，所有的这些个算子函数，归结到底都可以用...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/on2way">来自：	<span class="blog_title"> 我爱智能</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Luck_ZZ/article/details/79361497,BlogCommendHotData_2"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Luck_ZZ/article/details/79361497" target="_blank" title="thymeleaf模板实现html5标签的非严格检查">
+				<h4 class="text-truncate oneline">
+						thymeleaf模板实现html5标签的非严格检查				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-24</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Luck_ZZ/article/details/79361497" target="_blank" title="thymeleaf模板实现html5标签的非严格检查">
+							<span class="desc oneline">一、概述最近在springboot项目引入thymeleaf模板时，使用非严格标签时，运行会报错。默认thymeleaf模板对html5标签是严格检查的。二、在项目中加NekoHTML库在Maven中...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/Luck_ZZ">来自：	<span class="blog_title"> Luck_ZZ的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/maoyuanming0806/article/details/78067446,BlogCommendHotData_3"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/maoyuanming0806/article/details/78067446" target="_blank" title="搭建图片服务器《二》-linux安装nginx">
+				<h4 class="text-truncate oneline">
+						搭建图片服务器《二》-linux安装nginx				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/maoyuanming0806/article/details/78067446" target="_blank" title="搭建图片服务器《二》-linux安装nginx">
+							<span class="desc oneline">nginx是个好东西，Nginx (engine x) 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambl...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/maoyuanming0806">来自：	<span class="blog_title"> maoyuanming0806的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Yan_Chou/article/details/53406095,BlogCommendHotData_4"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Yan_Chou/article/details/53406095" target="_blank" title="frp配置本地服务端口到服务器80端口">
+				<h4 class="text-truncate oneline">
+						frp配置本地服务端口到服务器80端口				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-30</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Yan_Chou/article/details/53406095" target="_blank" title="frp配置本地服务端口到服务器80端口">
+							<span class="desc oneline">搭建环境：
+ubuntu 16.04 LTS （本地服务计算机） ubuntu 14.04 LTS(阿里云服务器)
+apache tomcat 7
+java 7 
+frp 0.8.1 linux
+搭建...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/Yan_Chou">来自：	<span class="blog_title"> Anteoy的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/chenghuikai/article/details/62891112,BlogCommendHotData_5"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/chenghuikai/article/details/62891112" target="_blank" title="OPENVPN拨入后给不同的用户分配不同的访问权限">
+				<h4 class="text-truncate oneline">
+						OPENVPN拨入后给不同的用户分配不同的访问权限				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">03-17</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5481</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/chenghuikai/article/details/62891112" target="_blank" title="OPENVPN拨入后给不同的用户分配不同的访问权限">
+							<span class="desc oneline">需求： 
+我们想要给不同部门的或者级别的用户单独设置访问策略，比如
+系统管理员：允许访问公司内网的所有的终端
+普通职工：只允许访问Samba/email服务器
+承包商：只允许访问特定的服务器  Cla...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/chenghuikai">来自：	<span class="blog_title"> linuxkai</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/kingofark/article/details/1991,BlogCommendHotData_6"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/kingofark/article/details/1991" target="_blank" title="kingofark关于学习C++和编程的另外35个观点">
+				<h4 class="text-truncate oneline">
+						kingofark关于学习C++和编程的另外35个观点				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-17</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1420</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/kingofark/article/details/1991" target="_blank" title="kingofark关于学习C++和编程的另外35个观点">
+							<span class="desc oneline">作者：kingofarkRevision 1.01.编写小程序，请画程序流程框图；编写大程序，请画分段程序流程框图；2.源代码看不太懂时，试着画出程序的流程图或分段流程图，并结合源代码搞清楚流程图中各...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/kingofark">来自：	<span class="blog_title"> 方舟 K ][ N G of A R K</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/pengjc2001/article/details/54924699,BlogCommendHotData_7"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/pengjc2001/article/details/54924699" target="_blank" title="三菱FX系列PLC与PC通讯的实现之专有协议（计算机联接）的程序设计之一">
+				<h4 class="text-truncate oneline">
+						三菱FX系列PLC与PC通讯的实现之专有协议（计算机联接）的程序设计之一				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/pengjc2001/article/details/54924699" target="_blank" title="三菱FX系列PLC与PC通讯的实现之专有协议（计算机联接）的程序设计之一">
+							<span class="desc oneline">阅读内容为：FX系列微型可编程控制器用户手册（通讯篇）中计算机链接功能章节。
+采用本方法通信，pc端的实现，其实就是，把操作按照协议（2种）翻译成相应的字符串，通过串口发送给plc。
+
+
+编写一应用程...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/pengjc2001">来自：	<span class="blog_title"> pengjc2001的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq574857122/article/details/16361033,BlogCommendHotData_8"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq574857122/article/details/16361033" target="_blank" title="强连通分量及缩点tarjan算法解析">
+				<h4 class="text-truncate oneline">
+						强连通分量及缩点tarjan算法解析				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							56万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq574857122/article/details/16361033" target="_blank" title="强连通分量及缩点tarjan算法解析">
+							<span class="desc oneline">强连通分量：
+简言之 就是找环（每条边只走一次，两两可达）
+孤立的一个点也是一个连通分量 
+ 
+使用tarjan算法 在嵌套的多个环中优先得到最大环( 最小环就是每个孤立点）
+ 
+定义：
+int Ti...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq574857122">来自：	<span class="blog_title"> 九野的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/flysharkym/article/details/51404730,BlogCommendHotData_9"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/flysharkym/article/details/51404730" target="_blank" title="mybatis一级缓存(session cache)引发的问题">
+				<h4 class="text-truncate oneline">
+						mybatis一级缓存(session cache)引发的问题				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-14</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/flysharkym/article/details/51404730" target="_blank" title="mybatis一级缓存(session cache)引发的问题">
+							<span class="desc oneline">mybatis一级缓存(session cache)引发的问题</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/flysharkym">来自：	<span class="blog_title"> flysharkym的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Smile_qiqi/article/details/32724931,BlogCommendHotData_10"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Smile_qiqi/article/details/32724931" target="_blank" title="魔兽争霸3冰封王座1.24e 多开联机补丁 信息发布与收集点">
+				<h4 class="text-truncate oneline">
+						魔兽争霸3冰封王座1.24e 多开联机补丁 信息发布与收集点				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-20</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Smile_qiqi/article/details/32724931" target="_blank" title="魔兽争霸3冰封王座1.24e 多开联机补丁 信息发布与收集点">
+							<span class="desc oneline">畅所欲言！</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/Smile_qiqi">来自：	<span class="blog_title"> Smile_qiqi的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Chay_Chan/article/details/75319452,BlogCommendHotData_11"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Chay_Chan/article/details/75319452" target="_blank" title="精仿今日头条">
+				<h4 class="text-truncate oneline">
+						精仿今日头条				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-18</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Chay_Chan/article/details/75319452" target="_blank" title="精仿今日头条">
+							<span class="desc oneline">转载请注明出处：http://blog.csdn.net/Chay_Chan/article/details/75319452
+
+
+
+由来篇
+
+
+
+当初的梦想
+
+  一直都想尝试开发自己还没接触过的某...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/Chay_Chan">来自：	<span class="blog_title"> Chay_Chan的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wmy199216/article/details/71171401,BlogCommendHotData_12"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wmy199216/article/details/71171401" target="_blank" title="keras实现常用深度学习模型LeNet，AlexNet，ZFNet，VGGNet，GoogleNet，Resnet">
+				<h4 class="text-truncate oneline">
+						keras实现常用深度学习模型LeNet，AlexNet，ZFNet，VGGNet，GoogleNet，Resnet				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-04</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							8270</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wmy199216/article/details/71171401" target="_blank" title="keras实现常用深度学习模型LeNet，AlexNet，ZFNet，VGGNet，GoogleNet，Resnet">
+							<span class="desc oneline">LeNet
+#coding=utf-8
+from keras.models import Sequential
+from keras.layers import Dense,Flatten
+from...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wmy199216">来自：	<span class="blog_title"> wmy199216的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/yenange/article/details/12198829,BlogCommendHotData_13"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/yenange/article/details/12198829" target="_blank" title="ODAC (odp.net)  从开发到部署">
+				<h4 class="text-truncate oneline">
+						ODAC (odp.net)  从开发到部署				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-30</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/yenange/article/details/12198829" target="_blank" title="ODAC (odp.net)  从开发到部署">
+							<span class="desc oneline">test</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/yenange">来自：	<span class="blog_title"> 我想我是海 冬天的大海 心情随风轻摆</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_37960603/article/details/85054409,BlogCommendHotData_14"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq_37960603/article/details/85054409" target="_blank" title="Consumer 接口 、 Predicate 接口初使用">
+				<h4 class="text-truncate oneline">
+						Consumer 接口 、 Predicate 接口初使用				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-17</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							312</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq_37960603/article/details/85054409" target="_blank" title="Consumer 接口 、 Predicate 接口初使用">
+							<span class="desc oneline">Consumer 接口
+源码
+package java.util.function;
+
+import java.util.Objects;
+
+@FunctionalInterface
+public i...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq_37960603">来自：	<span class="blog_title"> kaven</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/yu_xiaofei/article/details/13287899,BlogCommendHotData_15"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/yu_xiaofei/article/details/13287899" target="_blank" title="SNMP协议详解&lt;二&gt;">
+				<h4 class="text-truncate oneline">
+						SNMP协议详解&lt;二&gt;				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-29</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							12万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/yu_xiaofei/article/details/13287899" target="_blank" title="SNMP协议详解&lt;二&gt;">
+							<span class="desc oneline">上一篇文章讲解了SNMP的基本架构，本篇文章将重点分析SNMP报文，并对不同版本（SNMPv1、v2c、v3）进行区别！
+
+四、SNMP协议数据单元
+
+在SNMP管理中，管理站（NMS）和代理（Age...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/yu_xiaofei">来自：	<span class="blog_title"> 假装在纽约</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/xu__cg/article/details/53190763,BlogCommendHotData_16"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/xu__cg/article/details/53190763" target="_blank" title="Java设计模式18——状态模式">
+				<h4 class="text-truncate oneline">
+						Java设计模式18——状态模式				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/xu__cg/article/details/53190763" target="_blank" title="Java设计模式18——状态模式">
+							<span class="desc oneline">一、定义状态(State)模式又称为状态对象模式(Pattern of Objects for State),状态模式是对象的行为模式。状态模式允许一个对象在其内部状态改变时改变其行为，用于解决系统中...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/xu__cg">来自：	<span class="blog_title"> 小小本科生成长之路</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wuchengzeng/article/details/50037611,BlogCommendHotData_17"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wuchengzeng/article/details/50037611" target="_blank" title="jquery/js实现一个网页同时调用多个倒计时(最新的)">
+				<h4 class="text-truncate oneline">
+						jquery/js实现一个网页同时调用多个倒计时(最新的)				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-25</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							43万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wuchengzeng/article/details/50037611" target="_blank" title="jquery/js实现一个网页同时调用多个倒计时(最新的)">
+							<span class="desc oneline">jquery/js实现一个网页同时调用多个倒计时(最新的)
+
+最近需要网页添加多个倒计时. 查阅网络,基本上都是千遍一律的不好用. 自己按需写了个.希望对大家有用. 有用请赞一个哦!
+
+
+
+//js
+...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wuchengzeng">来自：	<span class="blog_title"> Websites</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/icefire_tyh/article/details/52064910,BlogCommendHotData_18"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/icefire_tyh/article/details/52064910" target="_blank" title="机器学习(周志华西瓜书) 参考答案 总目录">
+				<h4 class="text-truncate oneline">
+						机器学习(周志华西瓜书) 参考答案 总目录				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-17</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							11万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/icefire_tyh/article/details/52064910" target="_blank" title="机器学习(周志华西瓜书) 参考答案 总目录">
+							<span class="desc oneline">机器学习(周志华西瓜书)参考答案总目录
+
+从刚开始学习机器学习到现在也有几个月了，期间看过PDF，上过MOOC，总感觉知道一点了又不是特别明白，最后趁某东买书大减价弄了几本相关的书来看看，其中一本就是...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/icefire_tyh">来自：	<span class="blog_title"> 我的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bob601450868/article/details/52073805,BlogCommendHotData_19"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bob601450868/article/details/52073805" target="_blank" title="Spark2学习1之基本环境搭建（win）问题">
+				<h4 class="text-truncate oneline">
+						Spark2学习1之基本环境搭建（win）问题				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-30</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bob601450868/article/details/52073805" target="_blank" title="Spark2学习1之基本环境搭建（win）问题">
+							<span class="desc oneline">更多代码请见：https://github.com/xubo245/SparkLearning  版本：Spark-2.0.01解释 
+从【2】中下载release版，idea打开mvn packag...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/bob601450868">来自：	<span class="blog_title"> Keep Learning</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_36892341/article/details/73918672,BlogCommendHotData_20"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq_36892341/article/details/73918672" target="_blank" title="linux上安装Docker(非常简单的安装方法)">
+				<h4 class="text-truncate oneline">
+						linux上安装Docker(非常简单的安装方法)				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-29</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							19万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq_36892341/article/details/73918672" target="_blank" title="linux上安装Docker(非常简单的安装方法)">
+							<span class="desc oneline">最近比较有空，大四出来实习几个月了，作为实习狗的我，被叫去研究Docker了，汗汗！
+
+Docker的三大核心概念：镜像、容器、仓库
+镜像：类似虚拟机的镜像、用俗话说就是安装文件。
+容器：类似一个轻量...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq_36892341">来自：	<span class="blog_title"> 我走小路的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wanghao940101/article/details/72123184,BlogCommendHotData_21"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wanghao940101/article/details/72123184" target="_blank" title="免费的天气接口（满足你的大部分需求）">
+				<h4 class="text-truncate oneline">
+						免费的天气接口（满足你的大部分需求）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-15</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3987</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wanghao940101/article/details/72123184" target="_blank" title="免费的天气接口（满足你的大部分需求）">
+							<span class="desc oneline">项目中有需要抓取当地天气的需求，在网上找了很多的接口,要么是接口请求次数有限制,要么是数据不全,要么是接口失效，总之是无法很好的提供一个稳定的接口。为此很是头疼的一段时间，然后天不绝人，最终还是在网上...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wanghao940101">来自：	<span class="blog_title"> wanghao940101的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/lk_blog/article/details/8007777,BlogCommendHotData_22"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/lk_blog/article/details/8007777" target="_blank" title="配置简单功能强大的excel工具类搞定excel导入导出工具类(一)">
+				<h4 class="text-truncate oneline">
+						配置简单功能强大的excel工具类搞定excel导入导出工具类(一)				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/lk_blog/article/details/8007777" target="_blank" title="配置简单功能强大的excel工具类搞定excel导入导出工具类(一)">
+							<span class="desc oneline">对于J2EE项目导入导出Excel是最普通和实用功能,本工具类使用步骤简单,功能强大,只需要对实体类进行简单的注解就能实现导入导出功能,导入导出操作的都是实体对象.
+请看一下这个类都有哪些功能:
+  ...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/lk_blog">来自：	<span class="blog_title"> 李坤 大米时代 第五期</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/roguesir/article/details/77104246,BlogCommendHotData_23"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/roguesir/article/details/77104246" target="_blank" title="人脸检测工具face_recognition的安装与应用">
+				<h4 class="text-truncate oneline">
+						人脸检测工具face_recognition的安装与应用				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/roguesir/article/details/77104246" target="_blank" title="人脸检测工具face_recognition的安装与应用">
+							<span class="desc oneline">人脸检测工具face_recognition的安装与应用</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/roguesir">来自：	<span class="blog_title"> roguesir的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/isea533/article/details/49806637,BlogCommendHotData_24"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/isea533/article/details/49806637" target="_blank" title="Docx4j 简单操作文字图片（包含页眉页脚和主体内容）">
+				<h4 class="text-truncate oneline">
+						Docx4j 简单操作文字图片（包含页眉页脚和主体内容）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-12</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							9588</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/isea533/article/details/49806637" target="_blank" title="Docx4j 简单操作文字图片（包含页眉页脚和主体内容）">
+							<span class="desc oneline">docx4j官方提供了一些例子，本文只是其中一部分应用的简单例子。需要注意的地方是页眉和页脚，必须创建对应关系才能起作用。页眉和页脚添加图片的时候，第二个参数sourcePart是必须的，调用的cre...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/isea533">来自：	<span class="blog_title"> 偶尔记一下</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/monkeyK/article/details/783519,BlogCommendHotData_25"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/monkeyK/article/details/783519" target="_blank" title="06世界杯结果预测">
+				<h4 class="text-truncate oneline">
+						06世界杯结果预测				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-09</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							984</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/monkeyK/article/details/783519" target="_blank" title="06世界杯结果预测">
+							<span class="desc oneline">16强A 德国 波兰B 英格兰 巴拉圭C 阿根廷 荷兰D 墨西哥 葡萄牙E 意大利 捷克F 巴西 克罗地亚G 法国 瑞士H 西班牙 沙特八强德国 vs 阿根廷意大利 vs 法国英格兰 vs 荷兰巴西 ...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/monkeyK">来自：	<span class="blog_title"> 我的测试时代</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/tostq/article/details/51786265,BlogCommendHotData_26"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/tostq/article/details/51786265" target="_blank" title="编写C语言版本的卷积神经网络CNN之一：前言与Minst数据集">
+				<h4 class="text-truncate oneline">
+						编写C语言版本的卷积神经网络CNN之一：前言与Minst数据集				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-29</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/tostq/article/details/51786265" target="_blank" title="编写C语言版本的卷积神经网络CNN之一：前言与Minst数据集">
+							<span class="desc oneline">卷积神经网络是深度学习的基础，但是学习CNN却不是那么简单，虽然网络上关于CNN的相关代码很多，比较经典的是tiny_cnn（C++）、DeepLearnToolbox（Matlab）等等，但通过C语...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/tostq">来自：	<span class="blog_title"> tostq的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/gefangshuai/article/details/50328451,BlogCommendHotData_27"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
+				<h4 class="text-truncate oneline">
+						关于SpringBoot bean无法注入的问题（与文件包位置有关）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							16万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
+							<span class="desc oneline">问题场景描述整个项目通过Maven构建，大致结构如下：
+核心Spring框架一个module spring-boot-base
+service和dao一个module server-core
+提供系统...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/gefangshuai">来自：	<span class="blog_title"> 开发随笔</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/VBcom/article/details/7245186,BlogCommendHotData_28"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/VBcom/article/details/7245186" target="_blank" title="DirectX修复工具增强版">
+				<h4 class="text-truncate oneline">
+						DirectX修复工具增强版				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-09</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							191万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/VBcom/article/details/7245186" target="_blank" title="DirectX修复工具增强版">
+							<span class="desc oneline">最后更新：2018-12-20
+
+DirectX修复工具最新版：DirectX Repair V3.8 增强版  NEW!
+
+版本号：V3.8.0.11638
+
+大小: 107MB/7z格式压缩，18...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/VBcom">来自：	<span class="blog_title"> VBcom的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/supe_king/article/details/58121993,BlogCommendHotData_29"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/supe_king/article/details/58121993" target="_blank" title="caffe下fcn数据集制作的简化">
+				<h4 class="text-truncate oneline">
+						caffe下fcn数据集制作的简化				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-27</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							7278</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/supe_king/article/details/58121993" target="_blank" title="caffe下fcn数据集制作的简化">
+							<span class="desc oneline">前面一直跑caffe下的fcn，同时上一篇博客，也说明了关于fcn的数据集的制作。但是过程还是显的很复杂，因为我们都是模仿作者的数据集而作，而作者为了完成多任务，数据集制作的略显复杂，比如还需用到.m...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/supe_king">来自：	<span class="blog_title"> supe_king的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wsllittlebird/article/details/7908629,BlogCommendHotData_30"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wsllittlebird/article/details/7908629" target="_blank" title="ubuntu在系统启动logo过后无法进入桌面的处理方法">
+				<h4 class="text-truncate oneline">
+						ubuntu在系统启动logo过后无法进入桌面的处理方法				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-26</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							9964</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wsllittlebird/article/details/7908629" target="_blank" title="ubuntu在系统启动logo过后无法进入桌面的处理方法">
+							<span class="desc oneline">1）ubuntu在系统启动logo过后无法进入桌面的处理方法
+一般情况下，无法显示桌面，然后/var/log/Xorg.0.log中显示找不到显示器设备，但是在系统启动的时候会显示启动logo，是因...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wsllittlebird">来自：	<span class="blog_title"> 四维空间</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+        <div class="recommend-item-box type_hot_word">
+            <div class="content clearfix">
+        <div class="word float-left">
+                          <span>
+            <a href="https://edu.csdn.net/courses/o340_k " target="_blank">
+            游戏开发          </a></span>
+                                  <span>
+            <a href="https://edu.csdn.net/combos/o340_l0_t " target="_blank">
+            游戏开发学习          </a></span>
+                                  <span>
+            <a href="https://edu.csdn.net/courses/o340_k " target="_blank">
+            游戏开发培训          </a></span>
+                                  <span>
+            <a href="https://edu.csdn.net/combos/o340_l0_t " target="_blank">
+            游戏开发课程          </a></span>
+                                  <span>
+            <a href="https://edu.csdn.net/combos/o340_l0_t " target="_blank">
+            游戏开发视频教程          </a></span>
+                        </div>
+      </div>
+                  <div class="content clearfix">
+        <div class="float-left">
+                  <span>
+            <a href="https://www.csdn.net/gather_22/NtzakgzsMC1ibG9n.html" target="_blank">
+            c# 游戏开发、</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_2e/MtTakg4sNDgxMC1ibG9n.html" target="_blank">
+            android 游戏开发大全</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_29/MtzaYg4sMTUtYmxvZwO0O0OO0O0O.html" target="_blank">
+            c++ sdl检查</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_23/MtTakg4sOTkwMy1ibG9n.html" target="_blank">
+            android 游戏开发引擎</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_2b/MtTakg4sOTU2OS1ibG9n.html" target="_blank">
+            android游戏开发 实例</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_4a/MtSa1glsZHUO0O0O.html" target="_blank">
+            python教程+chm</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_4a/MtTaQgtsZWR1.html" target="_blank">
+            python教程百家号</a>
+          </span>
+                </div>
+      </div>
+          </div>
+
+
+            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+		    <div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/creambean">
+                <img src="https://avatar.csdn.net/1/3/E/3_creambean.jpg" class="avatar_pic">
+            </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                <a href="https://blog.csdn.net/creambean" target="_blank" class="" id="uid">cuiyong_cn</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="31">
+                        <dt><a href="https://blog.csdn.net/creambean?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/creambean?t=1"><span class="count">31</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="5">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">5</span></dd>
+        </dl>
+        <dl class="text-center" title="1">
+            <dt>喜欢</dt>
+            <dd><span class="count">1</span></dd>
+        </dl>
+        <dl class="text-center" title="2">
+            <dt>评论</dt>
+            <dd><span class="count">2</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="2级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-2"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="5743">
+                5743            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="360">
+                360            </dd>
+        </dl>
+        <dl title="263250">
+            <dt>排名：</dt>
+            <dd>26万+</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+                        <div class="icon-badge" title="持之以恒">
+            <div class="mouse-box">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#csdnc-m-lasting"></use>
+                </svg>
+                <div class="icon-arrow"></div>
+            </div>
+            <div class="grade-detail-box">
+                <div class="pos-box">
+                    <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#csdnc-m-lasting"></use>
+                        </svg>
+                        <p>持之以恒</p>
+                    </div>
+                    <div class="right-box d-flex justify-content-center align-items-center">
+                        授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！
+                    </div>
+                </div>
+            </div>
+        </div>
+                                                <script>
+            (function ($) {
+                setTimeout(function(){
+                    $('div.icon-badge.show-moment').removeClass('show-moment');
+                }, 5000);
+            })(window.jQuery)
+        </script>
+    </div>
+    </div>
+		    <div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-mod="popu_4" style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-876","con":",,"}' data-track-click='{"mod":"kp_popu_56-876","con":",,"}'><!-- 广告位：PC-博客内页左上视窗 -->
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '6096221',
+        container: s,
+        size: '300,250',
+        display: 'inlay-fix'
+    });
+})();
+</script>
+<script src="http://dup.baidustatic.com/js/os.js"></script></div>    </div>
+</div>
+		    <div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/creambean/article/details/88927745" target="_blank">Type Traits</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/creambean/article/details/88881955" target="_blank">Cache Memory</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/creambean/article/details/88834241" target="_blank">Incomplete type is not allowed</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/creambean/article/details/88833972" target="_blank">10. 游戏状态</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/creambean/article/details/88771553" target="_blank">To Kill A Singleton</a>
+            </li>
+                    </ul>
+    </div>
+</div>
+		    		    <div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/creambean/article/category/8731833">
+                    <span class="title oneline">c/c++</span>
+                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/creambean/article/category/8744010">
+                    <span class="title oneline">Win32</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/creambean/article/category/8746427">
+                    <span class="title oneline">leetcode</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/creambean/article/category/8757657">
+                    <span class="title oneline">OperatingSystem</span>
+                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/creambean/article/category/8758753">
+                    <span class="title oneline">SDL2</span>
+                    <span class="count float-right">11篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/creambean/article/category/8761369">
+                    <span class="title oneline">泛型编程</span>
+                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+		    <div id="asideArchive" class="aside-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/creambean/article/month/2019/03">
+                    2019年3月                    <span class="count float-right">33篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+		    <div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-mod="popu_521">
+							<li>
+					<a href="https://blog.csdn.net/creambean/article/details/88563374">0. SDL游戏开发</a>
+					<p class="read">阅读数 <span>4048</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/creambean/article/details/88619608">Why Not Specialize Function Templates?</a>
+					<p class="read">阅读数 <span>59</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/creambean/article/details/88695397">中断处理</a>
+					<p class="read">阅读数 <span>56</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/creambean/article/details/88620981">4. 让图片动起来</a>
+					<p class="read">阅读数 <span>56</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/creambean/article/details/88573494">3. 图片资源加载</a>
+					<p class="read">阅读数 <span>55</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+		    <div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/creambean/article/details/88563374#comments">0. SDL游戏开发</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/answer1998" class="user-name" target="_blank">answer1998：</a>学习                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/creambean/article/details/88563374#comments">0. SDL游戏开发</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/bbajj" class="user-name" target="_blank">bbajj：</a>学习                </p>
+            </li>
+                    </ul>
+    </div>
+</div>
+		<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-707","con":",,"}' data-track-click='{"mod":"kp_popu_57-707","con":",,"}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左下视窗-20181130 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1894159733"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="pulllog-box" style="display: block;">
+	<div class="pulllog clearfix">
+		<span class="text float-left">
+            <div id="dmp_ad_69"><div id="kp_box_69" data-pid="69" data-track-view='{"mod":"kp_popu_69-864","con":",,"}' data-track-click='{"mod":"kp_popu_69-864","con":",,"}'><div style="float:left;margin-right:5px;border:1px solid #f13d3d;padding:2px 5px 0px 5px;">
+<a href="https://edu.csdn.net/topic/python115?utm_source=ditong" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">Python全面学习指南</a>
+</div>
+
+<div style="float:left;margin-right:5px;border:1px solid #00BFFF;padding:2px 5px 0px 5px;background:#FFF0F5;">
+<a href="https://edu.csdn.net/topic/ai30?utm_source=ditong" target="_blank" style="color:#00BFFF;font-weight:bold;text-decoration:none;font-size:15px;">转型AI人工智能指南</a>
+</div>
+
+<div style="float:left;margin-right:5px;border:1px solid #f13d3d;padding:2px 5px 0px 5px;">
+<a href="https://edu.csdn.net/topic/ai30?utm_source=ditong" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">BAT的AI岗要求</a>
+</div>
+
+<div style="float:left;margin-right:5px;border:1px solid #00BFFF;padding:2px 5px 0px 5px;background:#FFF0F5;">
+<a href="https://gitbook.cn/gitchat/column/5c86261f029620739b167498?utm_source=wzl190315" target="_blank" style="color:#00BFFF;font-weight:bold;text-decoration:none;font-size:15px;">28 天算法训练营</a>
+</div>
+
+<div style="float:left;margin-right:5px;border:1px solid #f13d3d;padding:2px 5px 0px 5px;">
+<a href="https://pythondevdays2019.csdn.net/?utm_source=dbad" target=" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">2019 Python 开发者日</a>
+</div>
+
+
+
+<div style="float:left;">
+<script type="text/javascript" src="//rabc1.iteye.com/common/js/ndr3h.js?b=wosyvccl"></script>
+<!-- 长文字链
+<script type="text/javascript" src="//rabc1.iteye.com/common/5klj5.js?kfxbghx=bx"></script>
+-->
+</div></div></div>            		</span>
+		<div class="pulllog-btn float-right clearfix">
+            <div class="float-left csdn-tracking-statistics tracking-click" data-mod="popu_557">
+                <a class="pulllog-login">登录</a>
+            </div>
+            <div class="pulllog-sigin float-left csdn-tracking-statistics tracking-click" data-mod="popu_558">
+                <a href="https://passport.csdn.net/account/mobileregister" target="_blank">注册</a>
+            </div>
+            <button class="btn-close">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#csdnc-times"></use>
+                </svg>
+            </button>
+		</div>
+	</div>
+</div>
+<div id="loginWrap" style="display:none"></div>
+<div class="tool-box">
+	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p>0</p>
+			</button>
+		</li>
+		<li class="">
+						<a class="btn-comments long-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+						2				</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<button class="btn-toc low-height hover-box" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</button>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<button class="btn-bookmark low-height hover-box" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</button>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/creambean/article/details/88557825" title="计算机基本组件">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/creambean/article/details/88563791" title="1. 游戏的结构">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/creambean/article/details/88557825" title="计算机基本组件">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/creambean/article/details/88563791" title="1. 游戏的结构">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script>
+    var recommendCount = 81;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var articleTit = articleTitles;
+    var ChannelId = 30;
+    var articleId = "88563374";
+    var commentscount = 2;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/creambean/article/details/88563374";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "0. SDL游戏开发 - creambean的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+		var highlight = ["0.","sdl","\u6e38\u620f\u5f00\u53d1"];//高亮数组
+		// 相关推荐博主数据
+    var RecommendBlogExpertList = [{"user_name":"qinyuanpei","nick_name":"PayneQin","avatar":"https:\/\/avatar.csdn.net\/4\/D\/2\/3_qinyuanpei.jpg","is_expert":true,"article_count":230,"rank":"885"},{"user_name":"a332324956","nick_name":"\u4ee3\u7801GG\u9646\u6653\u660e","avatar":"https:\/\/avatar.csdn.net\/F\/1\/D\/3_a332324956.jpg","is_expert":true,"article_count":412,"rank":"4000+"},{"user_name":"qq_33747722","nick_name":"\u5373\u6b65","avatar":"https:\/\/avatar.csdn.net\/3\/0\/E\/3_qq_33747722.jpg","is_expert":true,"article_count":120,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"boonya","nick_name":"boonya","avatar":"https:\/\/avatar.csdn.net\/9\/4\/B\/3_boonya.jpg","is_expert":true,"article_count":1118,"rank":"252"},{"user_name":"qp120291570","nick_name":"\u62f3\u56db\u90ce","avatar":"https:\/\/avatar.csdn.net\/5\/2\/9\/3_qp120291570.jpg","is_expert":true,"article_count":449,"rank":"492"},{"user_name":"mao0514","nick_name":"\u6bdb\u6bdb\u866b\u7684\u7239","avatar":"https:\/\/avatar.csdn.net\/7\/C\/0\/3_mao0514.jpg","is_expert":true,"article_count":915,"rank":"285"},{"user_name":"rx0uc","nick_name":"\u89c2\u661f\u8005X","avatar":"https:\/\/avatar.csdn.net\/3\/4\/2\/3_rx0uc.jpg","is_expert":false,"article_count":2,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"kof98765","nick_name":"kof98765","avatar":"https:\/\/avatar.csdn.net\/5\/7\/6\/3_kof98765.jpg","is_expert":false,"article_count":91,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"mpsk07","nick_name":"mpsk","avatar":"https:\/\/avatar.csdn.net\/F\/D\/8\/3_mpsk07.jpg","is_expert":false,"article_count":7,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"yuanlinhyhy","nick_name":"yuanlinhyhy","avatar":"https:\/\/avatar.csdn.net\/0\/A\/5\/3_yuanlinhyhy.jpg","is_expert":false,"article_count":3,"rank":"\u5343\u91cc\u4e4b\u5916"}];
+	var articleType = 1;
+	var CopyrightContent = '';
+    var current_user_name = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.js"></script>
+<script src='https://csdnimg.cn/public/common/gotop/js/goTop-v1.0.min.js?v201811201455'></script>
+<script>
+    GoTop({
+        right: 8,
+        hasReport: true,
+        reportFun: function() {
+            showReport(false,articleTit);
+        }
+    })
+</script>
+</body>
+
+<!-- 高亮未与 markdown兼容  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.3.8/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-3bc59f8f2b.js" /></script>
+	
+	<!-- <script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/markdownCopy-5c7fa7386e.js" /></script> -->
+
+
+<script src="//g.csdnimg.cn/??login-box/1.0.5/login-box.js,login-box/1.0.5/login-auto.js?t=20190307095522"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-38af002ba7.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-715f188409.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-fc7383b956.min.js"></script>
+
+<script src="//g.csdnimg.cn/baidu-search/1.0.0/baidu-search.js"  type="text/javascript"></script>
+
+
+<!-- <script type="text/javascript" src="//g.csdnimg.cn/check-adb/1.0.2/check-adb.js"></script> -->
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>
