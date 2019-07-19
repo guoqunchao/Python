@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <style>
+        table{
+            border: 1px;
+            solid-color: black;
+            text-align: left;
+        }
+    </style>
+</head>
+<body style="margin: 0">
+    <div>
+        <form action="/home/" method="post">
+            <input name="username" type="text" placeholder="用户名："/>
+            <input name="email" type="text" placeholder="邮箱："/>
+            <input name="gender" type="text" placeholder="性别："/>
+            <input name="job" type="text" placeholder="职位："/>
+            <input name="telephone" type="text" placeholder="电话："/>
+            <input type="submit" value="提交"/>
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>邮箱</th>
+                <th>性别</th>
+                <th>职位</th>
+                <th>手机号</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in user_list %}
+            <tr>
+                <td>{{ row.username }}</td>
+                <td>{{ row.email }}</td>
+                <td>{{ row.gender }}</td>
+                <td>{{ row.job }}</td>
+                <td>{{ row.telephone }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
