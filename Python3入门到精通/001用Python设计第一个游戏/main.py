@@ -10,10 +10,10 @@ while True:
         sys.exit(1)
     guess = int(temp)
     if guess == secret:
-        print("哇 你太厉害了！")
+        print(">> 哇 你太厉害了！")
         break
     elif guess > secret:
-        print("哥哥 大了大了！")
+        print(">> 哥哥 大了大了！")
     else:
-        print("弟弟 小了小了")
+        print(">> 弟弟 小了小了")
 print("拜拜~  游戏结束！")
