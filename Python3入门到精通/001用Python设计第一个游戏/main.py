@@ -1,16 +1,19 @@
-print("-------------------------------------")
-a = 0
-while a < 3:
+import random
+import sys
+secret = random.randint(1,10)
+while True:
     temp = input("不妨猜一下小甲鱼现在心情想的是哪个数字: ")
-    guess = int(temp)
-    a += 1
-    if guess == 8:
-        print("卧槽，你是小甲鱼心里的蛔虫吗？")
-        print("哼，猜中了也没有奖励！")
-        break
+    if temp.isdigit():
+        guess = int(temp)
     else:
-        if guess > 8:
-            print("哥，大了大了")
-        else:
-            print("嘿，小了小了")
-print("游戏结束，不玩啦O(∩_∩)O！")
+        print("\"",temp,"\"","输入非法!")
+        sys.exit(1)
+    guess = int(temp)
+    if guess == secret:
+        print("哇 你太厉害了！")
+        break
+    elif guess > secret:
+        print("哥哥 大了大了！")
+    else:
+        print("弟弟 小了小了")
+print("拜拜~  游戏结束！")

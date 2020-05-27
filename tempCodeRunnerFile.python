@@ -1,0 +1,2 @@
+temp = input("不妨猜一下小甲鱼现在心情想的是哪个数字: ")
+print(temp.isdigit())
