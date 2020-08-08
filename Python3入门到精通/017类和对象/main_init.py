@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-class Ball():
+class Ball:
     def __init__(self,name):
         self.name = name
 
@@ -9,3 +9,14 @@ class Ball():
 
 a = Ball('a')
 a.kick()
+
+
+
+class Person:
+    # name = "Hello Ketty"
+    __name = "Hello Ketty"
+    def getName(self):
+        return self.__name
+
+p = Person()
+print(p.getName())
