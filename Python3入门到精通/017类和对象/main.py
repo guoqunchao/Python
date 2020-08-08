@@ -26,8 +26,8 @@ class Turtle: #Python中的类名约定以大写开头
         print("困了，睡了，晚安")
 
 tt = Turtle()
-print(tt.color)
-print(tt.bite())
+tt.color
+tt.bite()
 
 print('\n===========================================')
 
