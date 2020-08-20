@@ -1,4 +1,4 @@
-# -*- conding:utf-8 -*-
+# -*- coding:utf-8 -*-
 
 class Base01:
     def foo01(self):

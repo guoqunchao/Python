@@ -46,4 +46,3 @@ c.move()
 s = Shark()
 s.move()
 s.eat()
-

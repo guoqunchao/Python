@@ -1,4 +1,4 @@
-# -*- condig:utf-8 -*-
+# -*- coding:utf-8 -*-
 
 class Turtle:
     def __init__(self,x):
